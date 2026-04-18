@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:Poppins;
@@ -59,6 +58,26 @@ font-family:"Dancing Script";
 font-size:60px;
 text-align:center;
 margin-bottom:40px;
+}
+
+/* STILE PER LA TUA FOTO */
+.foto-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.foto-coppia {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    border: 10px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform: rotate(-3deg);
+    transition: 0.5s;
+}
+
+.foto-coppia:hover {
+    transform: rotate(0deg) scale(1.05);
 }
 
 .container{
@@ -156,8 +175,9 @@ border-radius:50%;
 border:none;
 font-size:20px;
 cursor:pointer;
+background: white;
+z-index: 100;
 }
-
 </style>
 </head>
 <body>
@@ -170,6 +190,11 @@ cursor:pointer;
 <div id="main">
 
 <h1>Buon Compleanno Amore Mio 💖</h1>
+
+<!-- SEZIONE FOTO AGGIUNTA -->
+<div class="foto-container">
+    <img src="https://cdn.discordapp.com/attachments/1366883427110096987/1495180354909372456/fb7e6faf-b129-48a0-916c-0226e6face81.jpg?ex=69e54eb7&is=69e3fd37&hm=83de8a68b5182f005b2147421cebbf684daf90f3fade089c48e3e3644bb8bad3&" alt="Noi due" class="foto-coppia">
+</div>
 
 <div class="container">
 
@@ -212,24 +237,15 @@ cursor:pointer;
 <div class="card-inner">
 <div class="card-front">Messaggio Segreto Finale 💖</div>
 <div class="card-back">
-Buon compleanno amore mio,
-
-oggi è un giorno speciale perché è nata la persona che ha cambiato la mia vita. Per me non è un compleanno come gli altri, perché festeggio te, la ragazza che mi ha fatto capire cosa significa davvero amare qualcuno.
-
-Da quando sei entrata nella mia vita tutto è cambiato. Hai riempito vuoti che non pensavo nemmeno di avere e sei diventata una delle persone più importanti per me.
-
-Ricordo ancora la prima volta che ti ho guardata negli occhi: lì ho capito che eri diversa da tutte le altre. Da quel momento è iniziato qualcosa che non riesco nemmeno a spiegare del tutto.
-
-Con te ho scoperto cos’è l’amore vero. Mi sento al sicuro, capito e felice come mai prima. Anche nei silenzi, mi basta guardarti per stare bene.
-
-Sei arrivata nella mia vita nel momento in cui ne avevo più bisogno, senza nemmeno saperlo mi hai aiutato più di quanto immagini.
-
-Oggi voglio solo vederti felice e ricordarti quanto sei importante per me. Voglio crescere con te, vivere tutto con te e restare al tuo fianco sempre.
-
-Buon compleanno amore mio.
+Buon compleanno amore mio, <br><br>
+oggi è un giorno speciale perché è nata la persona che ha cambiato la mia vita. Per me non è un compleanno come gli altri, perché festeggio te, la ragazza che mi ha fatto capire cosa significa davvero amare qualcuno.<br><br>
+Da quando sei entrata nella mia vita tutto è cambiato. Hai riempito vuoti che non pensavo nemmeno di avere e sei diventata una delle persone più importanti per me.<br><br>
+Ricordo ancora la prima volta che ti ho guardata negli occhi: lì ho capito che eri diversa da tutte le altre. Da quel momento è iniziato qualcosa che non riesco nemmeno a spiegare del tutto.<br><br>
+Con te ho scoperto cos’è l’amore vero. Mi sento al sicuro, capito e felice come mai prima. Anche nei silenzi, mi basta guardarti per stare bene.<br><br>
+Sei arrivata nella mia vita nel momento in cui ne avevo più bisogno, senza nemmeno saperlo mi hai aiutato più di quanto immagini.<br><br>
+Oggi voglio solo vederti felice e ricordarti quanto sei importante per me. Voglio crescere con te, vivere tutto con te e restare al tuo fianco sempre.<br><br>
+Buon compleanno amore mio.<br>
 Ti amo più di qualsiasi cosa, Lydia 🤍
-
-
 </div>
 </div>
 </div>
@@ -248,15 +264,10 @@ Ti amo più di qualsiasi cosa, Lydia 🤍
 <button id="musicBtn">🎵</button>
 
 <script>
-
-// FIX CLICK BUTTON (ora funziona sempre)
 document.getElementById("startBtn").addEventListener("click", startExperience);
-
-// FIX MUSIC BUTTON
 document.getElementById("musicBtn").addEventListener("click", toggleMusic);
 
 function startExperience(){
-
  document.getElementById("intro").style.display="none";
  document.getElementById("main").style.display="block";
 
@@ -290,42 +301,28 @@ function createHearts(){
 }
 
 function startTimer(){
-
- let start=new Date("2026-03-26");
-
+ // Ricordati di impostare la data del vostro incontro qui sotto!
+ let start = new Date("2026-03-26");
 
  setInterval(()=>{
+ let now = new Date();
+ let diff = now - start;
+ let days = Math.floor(diff/(1000*60*60*24));
 
- let now=new Date();
+ document.getElementById("timer").innerText = "Stiamo insieme da " + days + " giorni ❤️";
 
- let diff=now-start;
- let days=Math.floor(diff/(1000*60*60*24));
-
- document.getElementById("timer").innerText=
- "Stiamo insieme da "+days+" giorni ❤️";
-
- let meetDiff=meetingDate-now;
-
- if(meetDiff>0){
-
- let d=Math.floor(meetDiff/(1000*60*60*24));
- let h=Math.floor((meetDiff/(1000*60*60))%24);
- let m=Math.floor((meetDiff/60000)%60);
- let s=Math.floor((meetDiff/1000)%60);
-
- document.getElementById("meetingTimer").innerText=
- "Mancano "+d+" giorni "+h+" ore "+m+" minuti "+s+" secondi al nostro incontro 💞";
-
+ let meetDiff = meetingDate - now;
+ if(meetDiff > 0){
+  let d = Math.floor(meetDiff/(1000*60*60*24));
+  let h = Math.floor((meetDiff/(1000*60*60))%24);
+  let m = Math.floor((meetDiff/60000)%60);
+  let s = Math.floor((meetDiff/1000)%60);
+  document.getElementById("meetingTimer").innerText = "Mancano " + d + " giorni " + h + " ore " + m + " minuti " + s + " secondi al nostro incontro 💞";
  } else {
-
- document.getElementById("meetingTimer").innerText=
- "Finalmente ci vediamo oggi amore 💖";
-
+  document.getElementById("meetingTimer").innerText = "Finalmente ci vediamo oggi amore 💖";
  }
-
- },1000);
+ }, 1000);
 }
-
 </script>
 
 </body>
