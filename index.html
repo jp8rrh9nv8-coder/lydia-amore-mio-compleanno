@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buon Compleanno Amore Mio ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(120deg,#ff758c,#ff7eb3,#ffc3a0);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow-x:hidden;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+#intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+#startBtn{
+padding:15px 40px;
+border:none;
+border-radius:40px;
+font-size:20px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+transition:.3s;
+}
+
+#startBtn:hover{
+transform:scale(1.1);
+}
+
+#main{
+display:none;
+padding:40px;
+}
+
+h1{
+font-family:"Dancing Script";
+font-size:60px;
+text-align:center;
+margin-bottom:40px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+perspective:1200px;
+min-height:230px;
+}
+
+.card-inner{
+position:relative;
+width:100%;
+height:100%;
+transition:1s;
+transform-style:preserve-3d;
+cursor:pointer;
+}
+
+.card.flipped .card-inner{
+transform:rotateY(180deg);
+}
+
+.card-front,.card-back{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:25px;
+display:flex;
+align-items:center;
+justify-content:center;
+backface-visibility:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+padding:25px;
+text-align:center;
+}
+
+.card-front{
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+font-size:22px;
+}
+
+.card-back{
+background:#fff0f5;
+color:#333;
+transform:rotateY(180deg);
+font-size:16px;
+overflow-y:auto;
+line-height:1.6;
+}
+
+.big-card{
+grid-column:1/-1;
+min-height:320px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+opacity:.7;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+#timer{
+text-align:center;
+margin-top:40px;
+font-size:22px;
+}
+
+#meetingTimer{
+text-align:center;
+margin-top:10px;
+font-size:22px;
+}
+
+#musicBtn{
+position:fixed;
+right:20px;
+bottom:20px;
+padding:15px;
+border-radius:50%;
+border:none;
+font-size:20px;
+cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div id="intro">
+<h1>Ho preparato qualcosa per te ❤️</h1>
+<button id="startBtn">Clicca qui amore</button>
+</div>
+
+<div id="main">
+
+<h1>Buon Compleanno Amore Mio 💖</h1>
+
+<div class="container">
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Motivo 1 💌</div>
+<div class="card-back">Sei perfetta perché riesci a rendere felice la mia giornata anche solo con un messaggio.</div>
+</div>
+</div>
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Motivo 2 💌</div>
+<div class="card-back">Sei perfetta perché il tuo sorriso è il mio posto sicuro anche a distanza.</div>
+</div>
+</div>
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Motivo 3 💌</div>
+<div class="card-back">Sei perfetta perché mi fai sentire speciale come nessuno ha mai fatto.</div>
+</div>
+</div>
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Motivo 4 💌</div>
+<div class="card-back">Sei perfetta perché sei forte, dolce e unica nello stesso tempo.</div>
+</div>
+</div>
+
+<div class="card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Motivo 5 💌</div>
+<div class="card-back">Sei perfetta perché sei la persona con cui voglio condividere tutto.</div>
+</div>
+</div>
+
+<div class="card big-card" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-front">Messaggio Segreto Finale 💖</div>
+<div class="card-back">
+Buon compleanno amore mio,
+
+oggi è un giorno speciale perché è nata la persona che ha cambiato la mia vita. Per me non è un compleanno come gli altri, perché festeggio te, la ragazza che mi ha fatto capire cosa significa davvero amare qualcuno.
+
+Da quando sei entrata nella mia vita tutto è cambiato. Hai riempito vuoti che non pensavo nemmeno di avere e sei diventata una delle persone più importanti per me.
+
+Ricordo ancora la prima volta che ti ho guardata negli occhi: lì ho capito che eri diversa da tutte le altre. Da quel momento è iniziato qualcosa che non riesco nemmeno a spiegare del tutto.
+
+Con te ho scoperto cos’è l’amore vero. Mi sento al sicuro, capito e felice come mai prima. Anche nei silenzi, mi basta guardarti per stare bene.
+
+Sei arrivata nella mia vita nel momento in cui ne avevo più bisogno, senza nemmeno saperlo mi hai aiutato più di quanto immagini.
+
+Oggi voglio solo vederti felice e ricordarti quanto sei importante per me. Voglio crescere con te, vivere tutto con te e restare al tuo fianco sempre.
+
+Buon compleanno amore mio.
+Ti amo più di qualsiasi cosa, Lydia 🤍
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="timer"></div>
+<div id="meetingTimer"></div>
+
+</div>
+
+<audio id="music" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🎵</button>
+
+<script>
+
+// FIX CLICK BUTTON (ora funziona sempre)
+document.getElementById("startBtn").addEventListener("click", startExperience);
+
+// FIX MUSIC BUTTON
+document.getElementById("musicBtn").addEventListener("click", toggleMusic);
+
+function startExperience(){
+
+ document.getElementById("intro").style.display="none";
+ document.getElementById("main").style.display="block";
+
+ let music=document.getElementById("music");
+ music.volume=0.6;
+ music.play().catch(()=>{});
+
+ createHearts();
+ startTimer();
+}
+
+function flip(card){
+ card.classList.toggle("flipped");
+}
+
+function toggleMusic(){
+ let music=document.getElementById("music");
+ if(music.paused) music.play();
+ else music.pause();
+}
+
+function createHearts(){
+ setInterval(()=>{
+ let heart=document.createElement("div");
+ heart.className="heart";
+ heart.innerHTML="❤️";
+ heart.style.left=Math.random()*100+"vw";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),6000);
+ },600);
+}
+
+function startTimer(){
+
+ let start=new Date("2026-03-26");
+
+
+ setInterval(()=>{
+
+ let now=new Date();
+
+ let diff=now-start;
+ let days=Math.floor(diff/(1000*60*60*24));
+
+ document.getElementById("timer").innerText=
+ "Stiamo insieme da "+days+" giorni ❤️";
+
+ let meetDiff=meetingDate-now;
+
+ if(meetDiff>0){
+
+ let d=Math.floor(meetDiff/(1000*60*60*24));
+ let h=Math.floor((meetDiff/(1000*60*60))%24);
+ let m=Math.floor((meetDiff/60000)%60);
+ let s=Math.floor((meetDiff/1000)%60);
+
+ document.getElementById("meetingTimer").innerText=
+ "Mancano "+d+" giorni "+h+" ore "+m+" minuti "+s+" secondi al nostro incontro 💞";
+
+ } else {
+
+ document.getElementById("meetingTimer").innerText=
+ "Finalmente ci vediamo oggi amore 💖";
+
+ }
+
+ },1000);
+}
+
+</script>
+
+</body>
+</html>
